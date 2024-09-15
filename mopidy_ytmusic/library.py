@@ -730,7 +730,7 @@ class YTMusicLibraryProvider(backend.LibraryProvider):
                         else track["length"]
                     ).split(":")
                 artists = []
-                if "artists" in track:
+                if "artists" in track and track["artists"] is not None:
                     for a in track["artists"]:
                         if a["id"] not in self.ARTISTS:
                             self.ARTISTS[a["id"]] = Artist(
